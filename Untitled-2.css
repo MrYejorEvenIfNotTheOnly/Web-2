@@ -1,0 +1,222 @@
+* {
+    box-sizing: border-box
+}
+
+body {
+    background-image:"https://clipart-db.ru/file_content/rastr/background_039.jpg";
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color:black;
+}
+
+.main {
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+    grid-gap: 10px;
+    height: 90vh;
+    margin-top: 10vh
+}
+
+.left, .left a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+	justify-content: center;
+	border-radius: 20px;
+}
+
+.left img {
+    width: 80%;
+    border-radius: 5px;
+    transition: .4s;
+}
+
+.left img:hover{
+	width: 90%;
+	box-shadow: 0px 0px 8px 2px rgba(0, 0, 0, 0.3)
+}
+
+.left a:not(:first-child) {
+    margin-top: 40px;
+}
+
+.right, .right a{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 20px;
+}
+
+.right img{
+	width: 90%;
+	border-radius: 5px;
+	transition: .4s;
+}
+
+.right img:hover{
+    width: 100%;
+	box-shadow: 0px 0px 8px 2px rgba(0, 0, 0, 0.3);
+}
+
+.middle{
+	text-align: center;
+	font-size: 18px;
+	border-radius: 20px;
+	padding: 5%;
+}
+
+.middle img{
+	width: 35%;
+	border-radius: 5px;
+	transition: .4s;
+}
+
+.middle img:hover{
+    width: 40%;
+	box-shadow: 0px 0px 8px 2px rgba(0, 0, 0, 0.3);
+}
+.middle .author{
+	text-align: right;
+}
+    
+nav {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+    width: 100%;
+}
+
+.menu {
+    display: none;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 5px
+}
+
+.menu-button {
+    height: 8vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+	justify-content: center;
+}
+
+.menu-button img{
+	width: 80px;
+	height: 100%;
+	transition: 2s;
+	border-radius: 100%;
+}
+
+.menu-button img:hover{
+	background: orange;
+}
+
+.menu-button:hover + .menu, .menu:hover{
+    display: grid;
+}
+
+.menu-item {
+    width: 100%;
+    display: flex;
+    align-items: center;
+	flex-direction: column;
+}
+
+.menu-item .title {
+	width: 100%;    
+    height: 8vh;    
+    background: #6153CC;
+    display: flex;
+    align-items: center;
+	justify-content: center;
+	border-radius: 30px;
+	transition: .4s;
+}
+
+.menu-item .submenu {
+	display: none;
+    background: #6153CC;
+	width: 60%;
+	border-radius: 0 0 20px 20px;
+}
+
+.title:hover + .submenu, .submenu:hover{
+	display: block;
+}
+
+.title:hover{
+	background: #840032;
+}
+.submenu-item {
+	display:flex;
+	height: 60px;	
+	align-items: center;
+	justify-content: center;
+	transition: .2s
+}
+.submenu-item:hover {
+    background: #840032;
+}
+
+.submenu-item:last-child:hover {
+    border-radius: 0 0 20px 20px;
+}
+
+.author{
+	page-break-inside: avoid;
+}
+
+footer{
+	display: grid;
+	grid-template-columns: 5fr;
+	margin-top: 4vh;
+    text-align: right;
+    color: darkgrey;
+}
+
+@media print { 
+	nav, footer, a, audio{ 
+		display: none;
+		height: 0;
+		width: 0; 
+	} 
+	.main{
+		margin-top: 0;
+		grid-template-columns: 0fr 5fr 0fr;
+	}
+	.middle .text{
+		text-align: center;
+	}
+}
+
+a{
+	text-decoration: none;
+	color: black;
+}
+.list{
+	text-align: left;
+}
+
+.list ul{
+	font-size: 23px;
+}
+
+.list h2{
+	text-align: center;
+}
+
+.Infotext{
+	text-align: center;
+}
+
+.Infotext h1{
+	text-align: center;
+}
+
+.Infotext img{
+	width: 175px;
+	float: left;
+	padding-right: 10px;
+}
